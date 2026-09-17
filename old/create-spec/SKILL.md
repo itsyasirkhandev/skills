@@ -40,7 +40,7 @@ the user to commit or stash changes before proceeding.
 DO NOT CONTINUE until the working directory is clean.
 
 
-## Step 1 — setup the git branch
+## Step 2 — setup the git branch
 Create a new git branch for the feature.
 The branch name should follow this format: `feature/[ID]-[feature-name-kebab-case]`
 
@@ -64,24 +64,24 @@ If you cannot infer these from user input, ask the user
 to clarify before proceeding.
 
 
-## Step 2 — Switch to main and pull latest
+## Step 3 — Switch to main and pull latest
 Run:
 ```
 git checkout main
 git pull origin main
 ```
 
-## Step 3 — Create and switch to the feature branch
+## Step 4 — Create and switch to the feature branch
 Run:
 ```
 git checkout -b <branch_name>
 ```
-## Step 4 — Research the codebase
+## Step 5 — Research the codebase
 Read these files before writing the spec:
 
 - `AGENTS.md` — Global and project read both.
 
-## Step 5. Storage Location
+## Step 6. Storage Location
 
 Write the completed specification to:
 `.agents/specs/[ID]-[feature-slug]/spec.md`
