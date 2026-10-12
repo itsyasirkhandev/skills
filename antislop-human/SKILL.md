@@ -1,16 +1,17 @@
 ---
 name: antislop-human
-description: "Human and accessibility skill for antislop. Contrast, keyboard, focus, and states for real people. Includes the contrast checker."
+description: "Accessibility for antislop: contrast, keyboard navigation, focus, interaction states. Use when building or reviewing any interface. Load with the antislop core."
 ---
+
 # antislop-human
 
 > Anti Slop: Rules for AI Coding Agents. Human skill
 
-> Part of the antislop system. Read together with `antislop.md` (the core). This skill deep-dives the human concern: the UI must stay usable by people with different eyes, hands, and setups. Contrast, keyboard, focus, states, and the mobile details that exclude people.
+> Part of the antislop system. Read together with [antislop](../antislop/SKILL.md) (the core). This skill deep-dives the human concern: the UI must stay usable by people with different eyes, hands, and setups. Contrast, keyboard, focus, states, and the mobile details that exclude people.
 
 ## How to use this skill
 
-- Load together with `antislop.md` whenever the task builds or edits UI. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds the human-side depth: the parts of a UI that exclude people with different eyes, hands, and setups.
+- Load together with [antislop](../antislop/SKILL.md) whenever the task builds or edits UI. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds the human-side depth: the parts of a UI that exclude people with different eyes, hands, and setups.
 - Every entry has the same shape: **Tell** (the pattern), **Why** (who it excludes, and why it reads as unfinished), **Fix** (what to do instead), with the governing core rule cited as R-XX.
 - Accessibility is not a checklist of extras bolted on at the end. It is part of the core promise that "the UI holds up" (C-4). The Delivery Gate in the core remains the gate; the "Human Skill Checklist" at the end of this file is the supplement to run alongside it.
 - The contrast checker (formula + reference table + script) lives in this skill. Use it for every color pairing you cannot verify by eye.
@@ -66,7 +67,7 @@ If the `${CLAUDE_SKILL_DIR}` variable is not available in this agent, point the 
 **The reference table** (common pairings, computed with the formula):
 
 | Pairing (text on background) | Ratio | Normal text (4.5) | Large text (3.0) |
-|------------------------------|-------|-------------------|------------------|
+| --- | --- | --- | --- |
 | Black on white | 21.00 | Pass | Pass |
 | White on black | 21.00 | Pass | Pass |
 | White on #333333 | 12.63 | Pass | Pass |
@@ -120,7 +121,7 @@ Read the table as a sanity check, not as a substitute. Any pairing not listed, o
 
 ## Zoom & Mobile Use
 
-The layout mechanics behind mobile (breakpoints, scale, grids, overflow, tap targets) are the concern of `antislop-layoutmobile`. This section keeps only the mobile details that exclude people: zooming, and the on-screen keyboard.
+The layout mechanics behind mobile (breakpoints, scale, grids, overflow, tap targets) are the concern of [antislop-layoutmobile](../antislop-layoutmobile/SKILL.md). This section keeps only the mobile details that exclude people: zooming, and the on-screen keyboard.
 
 ### Text That Cannot Zoom
 

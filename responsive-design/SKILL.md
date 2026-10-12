@@ -1,6 +1,6 @@
 ---
 name: responsive-design
-description: Responsive design, use for making frontend design responsive.
+description: "Responsive layout: mobile-first, breakpoints, container queries, reflow. Use when building or fixing a layout that must work across screen sizes."
 license: MIT
 metadata:
   tags: responsive, mobile-first, layout, container-queries, breakpoints, frontend, css, reflow
@@ -18,6 +18,7 @@ Use this skill when the job is to **name the failing responsive surface, choose 
 The job is not to dump generic CSS recipes, paste framework snippets, or absorb every neighboring frontend concern.
 
 This skill should:
+
 1. classify the responsive failure first,
 2. choose one primary responsive packet,
 3. keep viewport vs container ownership explicit,
@@ -26,11 +27,13 @@ This skill should:
 6. route neighboring frontend work honestly.
 
 Read these support docs first:
+
 - [references/intake-packets-and-route-outs.md](references/intake-packets-and-route-outs.md)
 - [references/layout-decision-checklist.md](references/layout-decision-checklist.md)
 - [references/handoff-boundaries.md](references/handoff-boundaries.md)
 
 ## When to use this skill
+
 - A team says “this page breaks on mobile” and the real responsive surface is still unclear.
 - A dashboard, nav, form, card grid, pricing page, table, or embed needs a responsive strategy before more breakpoints are added.
 - You need to decide whether the fix belongs in viewport layout rules, container queries, intrinsic layout, responsive media handling, or verification/reflow follow-up.
@@ -38,6 +41,7 @@ Read these support docs first:
 - The request mixes page-level adaptation, component reuse, and dense-data pressure and needs routing before implementation.
 
 ## When not to use this skill
+
 - **The main task is reusable primitive / slot / variant API design or component-family ownership** → `design-system`
 - **The main task is keyboard/focus behavior, semantics, labels, contrast, reduced motion, or accessibility-heavy remediation** → `web-accessibility`
 - **The main task is breakpoint governance, token policy, or cross-product responsive standards** → `design-system`
@@ -48,6 +52,7 @@ Read these support docs first:
 ## Instructions
 
 ### Step 1: Frame the responsive job before naming CSS
+
 Capture the minimum intake packet first.
 
 ```yaml
@@ -63,9 +68,11 @@ responsive_intake:
 Rule: do **not** start with “add another breakpoint.” First label the failing responsive surface.
 
 ### Step 2: Choose exactly one primary responsive packet
+
 Use the router in [references/intake-packets-and-route-outs.md](references/intake-packets-and-route-outs.md).
 
 Primary packets:
+
 1. `page-layout`
 2. `component-slot`
 3. `dense-data`
@@ -75,7 +82,9 @@ Primary packets:
 Pick the highest-leverage packet for the current decision. List anything else as follow-up, not as equal co-owners.
 
 ### Step 3: Keep the invariants visible
+
 These rules survive every answer:
+
 - mobile-first defaults are still the safest baseline for feature delivery
 - intrinsic layout beats breakpoint sprawl when it solves the problem cleanly
 - viewport rules own page-shell changes; container rules own reusable slot adaptation
@@ -85,6 +94,7 @@ These rules survive every answer:
 - zoom/reflow and long-copy stress are verification requirements, not afterthoughts
 
 ### Step 4: Build the responsive strategy packet
+
 Return this structure:
 
 ```markdown
@@ -126,9 +136,11 @@ Return this structure:
 ```
 
 ### Step 5: Use the packet, not a giant CSS tutorial
+
 Pull the packet from [references/intake-packets-and-route-outs.md](references/intake-packets-and-route-outs.md).
 
 Packet rules:
+
 - `page-layout` → page shell, nav/sidebar shifts, grid columns, spacing density, viewport breakpoints
 - `component-slot` → reusable card/panel/module behavior that changes by parent width; container queries or intrinsic component rules
 - `dense-data` → tables, toolbars, filter bars, dashboards, and intentional fallback choices such as summary, disclosure, or horizontal scroll
@@ -136,17 +148,20 @@ Packet rules:
 - `verification-reflow` → zoom, reflow, overflow, long labels, localization, and screenshot-vs-manual follow-up before release
 
 ### Step 6: Separate mechanism choice from ownership choice
+
 Use this split in every serious answer:
+
 - **Mechanism** — intrinsic layout, viewport queries, container queries, responsive media rules, fallback presentation
 - **Ownership** — `responsive-design`, `design-system`, `web-accessibility`, `design-system`, `web-accessibility`, or `react-best-practices`
 
 If the request starts from a screenshot, QA note, or “mobile is broken” report, say explicitly that the screenshot is the **signal artifact**, not the finished responsive strategy.
 
 ### Step 7: Route adjacent work explicitly
+
 Use these route-outs when the problem crosses boundaries:
 
 | If the real job is... | Route to... |
-|---|---|
+| --- | --- |
 | reusable primitive API, variant sprawl, slot ownership, component structure | `design-system` |
 | semantics, keyboard/focus, labels, contrast, motion, or accessibility-heavy remediation | `web-accessibility` |
 | shared breakpoint tokens, system-wide density rules, cross-product frontend standards | `design-system` |
@@ -154,7 +169,9 @@ Use these route-outs when the problem crosses boundaries:
 | hydration, rerender churn, client-boundary cost, or runtime performance | `react-best-practices` |
 
 ## Output expectations
+
 A strong answer from this skill should:
+
 1. identify the **primary responsive packet**,
 2. recommend one bounded adaptation strategy,
 3. name the **manual verification still required**,
@@ -164,55 +181,71 @@ A strong answer from this skill should:
 ## Examples
 
 ### Example 1: dashboard overflow on mobile
+
 **Input**
+
 > Our dashboard filter bar and data table force horizontal scrolling on mobile. Help us fix the responsive behavior.
 
 **Output direction**
+
 - choose `dense-data`
 - keep a mobile-first shell but make the table/toolbar fallback intentional
 - include zoom/reflow verification and long-label checks
 - route accessibility-heavy remediation to `web-accessibility` if it becomes the main issue
 
 ### Example 2: reusable card in many slots
+
 **Input**
+
 > The same card lives in a sidebar, a feed, and a 2-column grid. Should we use container queries or more viewport breakpoints?
 
 **Output direction**
+
 - choose `component-slot`
 - explain why parent-container width is the main driver
 - recommend container queries or intrinsic layout at the card-shell boundary
 - route primitive/API redesign to `design-system` if the structure itself is wrong
 
 ### Example 3: pricing page before launch
+
 **Input**
+
 > Review this pricing page before launch. Cards feel cramped on mobile and the hero wraps badly.
 
 **Output direction**
+
 - keep `responsive-design` on the layout-adaptation slice only
 - produce one packet for page layout plus dense mobile sections
 - route broader hierarchy / CTA / polish review to `web-accessibility`
 - keep accessibility remediation separate unless it becomes primary
 
 ### Example 4: system-wide breakpoint debate
+
 **Input**
+
 > Our teams all use different breakpoint and spacing rules across products. Is responsive-design the right skill?
 
 **Output direction**
+
 - explain that shared breakpoint/token governance is broader `design-system` work
 - keep `responsive-design` narrower than cross-product standards
 - avoid over-triggering on governance-only requests
 
 ### Example 5: zoom and reflow failure
+
 **Input**
+
 > This form still breaks at 400% zoom and keyboard users lose context. Should we keep fixing it in responsive-design?
 
 **Output direction**
+
 - choose `verification-reflow` first if layout ownership is still unclear
 - include zoom/reflow verification explicitly
 - route keyboard/focus remediation to `web-accessibility`
 - split the work instead of forcing one skill to own everything
 
 ## Best practices
+
 1. Start with the failing responsive surface, not the syntax trick.
 2. Prefer intrinsic layout before adding another breakpoint.
 3. Keep viewport and container ownership explicit.
@@ -222,6 +255,7 @@ A strong answer from this skill should:
 7. When unsure, route neighboring frontend work explicitly instead of inflating this skill.
 
 ## References
+
 - [MDN: Responsive design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design)
 - [MDN: Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
 - [MDN: Container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries)

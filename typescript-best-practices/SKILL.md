@@ -1,6 +1,6 @@
 ---
 name: typescript-best-practices
-description: "use typescript best practices typesafety use when user is working in .ts or .tsx files in a codebase"
+description: "TypeScript type safety patterns. Use when writing, reviewing, or refactoring .ts or .tsx code."
 ---
 
 # TypeScript best practices
@@ -8,7 +8,7 @@ description: "use typescript best practices typesafety use when user is working 
 Apply the **type-system-discipline** principle skill first; this skill grounds it in TypeScript syntax.
 
 | Rule | Summary |
-|------|---------|
+| --- | --- |
 | Discriminated unions | Model variants with a `kind` literal discriminant so impossible states can't be represented. No optional-field bags. |
 | Branded types | Brand primitives with `& { readonly __brand: "X" }` so they can't be mixed up. Validate once at creation. |
 | Constructive modeling | Build the shape so the illegal value can't be constructed. `[T, ...T[]]` for non-empty, `[T, T][]` for even length, `start` plus `duration` for a range. Not a runtime guard, not a wish for refinement types. |
@@ -25,4 +25,4 @@ Apply the **type-system-discipline** principle skill first; this skill grounds i
 | Real tests | Don't mock what you can run. Prefer the framework's real test primitives with leak/disposable checks, and verify UI in a running build. Mock only what you can't run locally. |
 | Structured telemetry | Prefer structured logger diagnostics with enough context to debug from an id. No `console.log` in shipped code. |
 
-Examples: `references/patterns.md`.
+Examples: [references/patterns.md](references/patterns.md).

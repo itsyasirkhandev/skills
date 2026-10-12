@@ -1,16 +1,17 @@
 ---
 name: antislop-code
-description: "Code comment hygiene for AI coding agents: remove generic AI-slop comments, keep the valuable ones, never touch the code."
+description: "AI slop in code comments: which to cut, which to keep. Use when writing, reviewing, or cleaning up comments. Load with the antislop core."
 ---
+
 # antislop-code
 
 > Anti Slop: Rules for AI Coding Agents. Code Comments skill
 
-> Part of the antislop system. Read together with `antislop.md` (the core). This skill filters comments that read as generically AI (decorative, restating the obvious, stiff, loud) while preserving the comments that carry real information. It references core rules by number and never duplicates or renumbers them. Load it when the task writes or edits code comments.
+> Part of the antislop system. Read together with [antislop](../antislop/SKILL.md) (the core). This skill filters comments that read as generically AI (decorative, restating the obvious, stiff, loud) while preserving the comments that carry real information. It references core rules by number and never duplicates or renumbers them. Load it when the task writes or edits code comments.
 
 ## How to use this skill
 
-- Load together with `antislop.md` whenever the task touches code comments. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds comment-specific depth.
+- Load together with [antislop](../antislop/SKILL.md) whenever the task touches code comments. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds comment-specific depth.
 - Every entry has the same shape: **Tell** (the pattern), **Why** (why it reads as slop), **Fix** (what to do instead), with the governing core rule cited as R-XX.
 - **Scope guardrail:** this skill only modifies comments. Never modify executable code, identifiers, imports, formatting, indentation, whitespace, control flow, or logic. When in doubt, leave the code untouched.
 - The Delivery Gate in the core remains the gate. The "Code Comment Checklist" at the end of this file is the comment-specific supplement to run alongside it.

@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: Use when user ask you to Build multiple genuinely different versions of a UI. 
+description: "Build multiple genuinely different versions of a UI with a picker to compare them. Use only when the user explicitly asks for several UI prototypes, variations, or design options to choose between."
 disable-model-invocation: true
 ---
 

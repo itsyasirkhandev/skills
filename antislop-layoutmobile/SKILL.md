@@ -1,16 +1,17 @@
 ---
 name: antislop-layoutmobile
-description: "Mobile layout skill for antislop. Use for layouts that reflow on small screens: grids, overflow, tap targets. Load with the core."
+description: "Mobile layout skill for antislop. Use for layouts that reflow on small screens: grids, overflow, tap targets. Load with the antislop core."
 ---
+
 # antislop-layoutmobile
 
 > Anti Slop: Rules for AI Coding Agents. Mobile Layout skill
 
-> Part of the antislop system. Read together with `antislop.md` (the core). This skill deep-dives the mobile layout concern: how a layout must reflow on small screens. Breakpoints, scale, grids, overflow, tap targets, and navigation. It references core rules by number and never duplicates or renumbers them. Load it when the task builds or edits a layout that has to hold up on a phone.
+> Part of the antislop system. Read together with [antislop](../antislop/SKILL.md) (the core). This skill deep-dives the mobile layout concern: how a layout must reflow on small screens. Breakpoints, scale, grids, overflow, tap targets, and navigation. It references core rules by number and never duplicates or renumbers them. Load it when the task builds or edits a layout that has to hold up on a phone.
 
 ## How to use this skill
 
-- Load together with `antislop.md` whenever the task is mobile or responsive layout work. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds mobile-layout depth.
+- Load together with [antislop](../antislop/SKILL.md) whenever the task is mobile or responsive layout work. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate); this skill holds mobile-layout depth.
 - Every entry has the same shape: **Tell** (the pattern), **Why** (why it reads as slop), **Fix** (what to do instead), with the governing core rule cited as R-XX.
 - The principle behind this skill: **mobile layout is a different layout, not the desktop layout at a smaller size.** It must reflow: re-stack, rescale, and re-order with intent. Every pattern below is a way a layout fails to reflow.
 - The Delivery Gate in the core remains the gate. The "Layoutmobile Skill Checklist" at the end of this file is the mobile-specific supplement to run alongside it.
@@ -92,7 +93,7 @@ description: "Mobile layout skill for antislop. Use for layouts that reflow on s
 ### Overflow Hidden Clipping
 
 - **Tell:** `overflow: hidden` on a container that clips content at narrow widths, hiding text or controls instead of letting them fit.
-- **Why:** clipping is hiding a failure. When a container cuts off its content because the layout cannot fit it, the user loses information and interaction (R-03). The zoom and text-resize angle on this is covered by `antislop-human`.
+- **Why:** clipping is hiding a failure. When a container cuts off its content because the layout cannot fit it, the user loses information and interaction (R-03). The zoom and text-resize angle on this is covered by [antislop-human](../antislop-human/SKILL.md).
 - **Fix:** let the content reflow instead of clipping: allow the container to grow, wrap its content, or collapse it at the breakpoint. Clip only where cropping is the design intent (like a thumbnail), never where it hides content.
 
 ### Fixed-Width Children

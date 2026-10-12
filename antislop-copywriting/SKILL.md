@@ -1,16 +1,17 @@
 ---
 name: antislop-copywriting
-description: "Copy and text skill for antislop. Use when writing or editing prose: headlines, tone, CTAs, and anti-AI-writing patterns. Load with the core."
+description: "AI slop in interface and marketing copy: headlines, tone, CTAs. Use when writing copy for a site or app. Load with the antislop core."
 ---
+
 # antislop-copywriting
 
 > Anti Slop: Rules for AI Coding Agents. Copy & Text skill
 
-> Part of the antislop system. Read together with `antislop.md` (the core). This skill deep-dives the copy and text concern: headlines, CTAs, tone, value propositions, and the patterns that make AI-written prose easy to spot. It references core rules by number and never duplicates or renumbers them. Load it when the task writes or edits marketing copy, product copy, landing-page text, or any prose meant for people to read.
+> Part of the antislop system. Read together with [antislop](../antislop/SKILL.md) (the core). This skill deep-dives the copy and text concern: headlines, CTAs, tone, value propositions, and the patterns that make AI-written prose easy to spot. It references core rules by number and never duplicates or renumbers them. Load it when the task writes or edits marketing copy, product copy, landing-page text, or any prose meant for people to read.
 
 ## How to use this skill
 
-- Load together with `antislop.md` whenever the task is copy or text work. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate) and the hard bans (R-02, R-15, R-16, R-17, R-18, R-36, R-38). This skill holds copy-specific depth that the core does not.
+- Load together with [antislop](../antislop/SKILL.md) whenever the task is copy or text work. The core holds the mechanism (the purpose test, the three tiers, the Delivery Gate) and the hard bans (R-02, R-15, R-16, R-17, R-18, R-36, R-38). This skill holds copy-specific depth that the core does not.
 - Every pattern has the same shape: **The pattern**, **Why it reads as AI**, **Before** (the slop), **After** (the fix), with the governing core rule cited as R-XX.
 - Two rules apply to everything below:
   - **Never invent facts** (R-17, R-36, R-38). A rewrite adds no fact, name, number, date, quote, or citation that is not in the source text or supplied by the user. Specificity comes from the source or the user, not from the rewrite. If a sentence needs real detail to work, ask for it or write the plain version without it.
@@ -232,7 +233,7 @@ description: "Copy and text skill for antislop. Use when writing or editing pros
 
 - **The pattern:** the em dash character (`—`) used as an aside or connector: *"institutions — not the people — continue"*.
 - **Why it reads as AI:** it is one of the most reliable AI tells, and the core bans it outright.
-- **Rule:** R-02 forbids the em dash in any text. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introduce an explanation), parentheses (a true aside), or restructure the sentence. Also catch spaced em dashes (` — `) and double hyphens (` -- `) used the same way.
+- **Rule:** R-02 forbids the em dash in any text. Replace each one, in rough order of preference: a period (start a new sentence), a comma (a tight aside), a colon (introduce an explanation), parentheses (a true aside), or restructure the sentence. Also catch spaced em dashes ( `—` ) and double hyphens ( `--` ) used the same way.
 - **Before:**
   > The policy — announced without warning — affects thousands of workers.
 - **After:**
@@ -253,7 +254,7 @@ description: "Copy and text skill for antislop. Use when writing or editing pros
 - **After:**
   > It blends OKRs, KPIs, and visual strategy tools for planning.
 - **Rule:** R-36.
-- **Carve-out:** the structural labels inside the antislop rules themselves (the `**FORBIDDEN**` / `**REQUIRED**` markers in `antislop.md`) are documentation conventions, not the mechanical bold-every-key-term pattern above, and are exempt.
+- **Carve-out:** the structural labels inside the antislop rules themselves (the `**FORBIDDEN**` / `**REQUIRED**` markers in [antislop](../antislop/SKILL.md)) are documentation conventions, not the mechanical bold-every-key-term pattern above, and are exempt.
 
 ### Excessive Quotation Marks
 
@@ -272,7 +273,9 @@ description: "Copy and text skill for antislop. Use when writing or editing pros
 - **Why it reads as AI:** the header restates what the item already says. It is a formatting habit, not a structure.
 - **Before:**
   > - **User Experience:** The interface is easier to use.
+
   > - **Performance:** Load times are faster.
+
   > - **Security:** Data is encrypted.
 - **After:**
   > The update improves the interface, speeds up load times, and encrypts data in transit.
@@ -285,6 +288,7 @@ description: "Copy and text skill for antislop. Use when writing or editing pros
 - **Why it reads as AI:** the emoji carries no information. It decorates instead of communicating.
 - **Before:**
   > 🚀 **Launch Phase:** The product ships in Q3
+
   > 💡 **Key Insight:** Users prefer simple pricing
 - **After:**
   > The product ships in Q3. User research showed a preference for simple pricing.

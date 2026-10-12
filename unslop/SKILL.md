@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: use to remove AI patterns and add Human voice. use when giving your finding report or response to the user. 
+description: "AI writing tells and how to strip them. Use before sending any prose the user will read, or when asked to make text sound human."
 ---
 
 # Unslop
