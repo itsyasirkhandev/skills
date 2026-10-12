@@ -32,7 +32,7 @@ Pull requests
 
 - [file-pr](file-pr/) writes PR titles and descriptions that lead with the problem.
 - [babysit-pr](babysit-pr/) watches CI and review bots and keeps fixing until the PR can merge.
-- [adversarial-pr](adversarial-pr/) reviews AI-written code as if it were a hostile reviewer's job.
+- [adversarial-pr](adversarial-pr/) reviews AI-written code independently and sizes the review to the change.
 
 Prompts and writing
 
