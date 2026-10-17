@@ -18,6 +18,7 @@ UI and design
 
 - [antislop](antislop/) is the core rule set against generic AI-looking UI, copy, and code. Load it alongside one of its sub-skills: [antislop-ui](antislop-ui/), [antislop-copywriting](antislop-copywriting/), [antislop-human](antislop-human/) (accessibility, with a contrast checker script), [antislop-layoutmobile](antislop-layoutmobile/), and [antislop-code](antislop-code/) (code comments).
 - [animate](animate/) decides whether something should move, then picks the tool, easing, and duration.
+- [refactoring-ui](refactoring-ui/) applies Refactoring UI rules for spacing, typography, color, hierarchy, and shadows. Includes reference guides and starter CSS tokens.
 - [responsive-design](responsive-design/) covers mobile-first layouts, breakpoints, and container queries.
 - [prototype](prototype/) builds several different versions of a UI with a picker to switch between them. It only runs when you ask for it.
 
@@ -26,7 +27,7 @@ Code
 - [effect](effect/) is for Effect v4 in TypeScript. The references cover services, schemas, streams, HTTP, and testing.
 - [typescript-best-practices](typescript-best-practices/) has type safety patterns for `.ts` and `.tsx` files.
 - [vercel-react-best-practices](vercel-react-best-practices/) is Vercel's React and Next.js performance guide.
-- [tdd](tdd/) walks through red-green-refactor.
+- [tdd](tdd/) focuses bug fixes on a failing-before, passing-after regression check when a cheap local test is practical.
 
 Pull requests
 
