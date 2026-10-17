@@ -48,5 +48,6 @@ Tools
 
 - [playwright-cli](playwright-cli/) drives a browser for testing and automation.
 - [tmux](tmux/) works with interactive tmux sessions, with psmux on Windows.
+- [swarm](swarm/) coordinates parallel workers for divided tasks or competing approaches and returns one consolidated report.
 
 [old/](old/) has retired skills for writing specs and technical design plans. I keep them for reference.
