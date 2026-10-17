@@ -28,6 +28,8 @@ Code
 - [typescript-best-practices](typescript-best-practices/) has type safety patterns for `.ts` and `.tsx` files.
 - [vercel-react-best-practices](vercel-react-best-practices/) is Vercel's React and Next.js performance guide.
 - [tdd](tdd/) focuses bug fixes on a failing-before, passing-after regression check when a cheap local test is practical.
+- [create-verification-skill](create-verification-skill/) creates a project-local verification skill with launch, health-check, driving, evidence, cleanup, and feature-map instructions.
+- [maintain-verification-skill](maintain-verification-skill/) audits an existing verification skill against source code and live app behavior, then opens one PR for proven corrections when needed.
 
 Pull requests
 
